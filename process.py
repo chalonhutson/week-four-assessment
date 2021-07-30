@@ -15,6 +15,23 @@ def sales_reports(log_file):
         if day == "Mon":    
             print(line)
     
-
 #This line below invokes or calls the function above, passing in the file at the top of the code as the argument.
 sales_reports(log_file)
+
+# Moves the cursor to the top of the txt file so it can read it again.
+log_file.seek(0)
+
+# Below is the code for the Python extra credit.
+
+def over_ten (log_file):
+    for line in log_file:
+        line = line.rstrip()
+        el = line.split(" ")
+        num = int(el[2])
+        if num > 10:
+            print(line)
+
+over_ten(log_file)
+
+# Chalon added for best practice.
+log_file.close()
